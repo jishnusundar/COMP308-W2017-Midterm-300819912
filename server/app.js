@@ -1,3 +1,9 @@
+/*
+Filename: app.js
+Author: Jishnu Sundar
+Student ID: 300819912
+Web App: COMP308-W2017-MidTerm-300819912
+*/
 // modules required for the project
 let express = require('express');
 let path = require('path'); // part of node.js core

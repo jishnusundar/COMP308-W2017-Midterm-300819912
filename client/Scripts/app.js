@@ -1,6 +1,13 @@
 /* custom JS goes here */
 
+/*
+Filename: Scripts/app.js
+Author: Jishnu Sundar
+Student ID: 300819912
+Web App: COMP308-W2017-MidTerm-300819912
+*/
 /* pagination code from http://www.bootply.com/lxa0FF9yhw */
+
 $.fn.pageMe = function(opts){
     var $this = this,
         defaults = {

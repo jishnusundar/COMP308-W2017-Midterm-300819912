@@ -1,3 +1,9 @@
+/*
+Filename:config/db.js
+Author: Jishnu Sundar
+Student ID: 300819912
+Web App: COMP308-W2017-MidTerm-300819912
+*/
 module.exports = {
   //local MongoDB deployment ->
   "URI": "mongodb://localhost/books308"

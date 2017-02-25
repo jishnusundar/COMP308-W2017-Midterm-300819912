@@ -1,3 +1,9 @@
+/*
+Filename: server.js
+Author: Jishnu Sundar
+Student ID: 300819912
+Web App: COMP308-W2017-MidTerm-300819912
+*/
 let app = require('./server/app');
 let debug = require('debug')('comp308-w2017-midterm:server');
 let http = require('http');

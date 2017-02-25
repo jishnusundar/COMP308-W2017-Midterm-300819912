@@ -1,3 +1,9 @@
+/*
+Filename: routes/books.js
+Author: Jishnu Sundar
+Student ID: 300819912
+Web App: COMP308-W2017-MidTerm-300819912
+*/
 // modules required for routing
 let express = require('express');
 let router = express.Router();
