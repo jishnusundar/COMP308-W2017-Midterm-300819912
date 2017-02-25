@@ -67,6 +67,29 @@ router.get('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+        try {
+      // get a reference to the id from the url
+      let id = mongoose.Types.ObjectId.createFromHexString(req.params.id);
+
+        // find the book from DB by its id
+      book.findById(id, (err, books) => {
+        if(err) {
+          console.log(err);
+          res.end(error);
+        } else {
+          // show the books details view and update the fields with existing values
+          res.render('books/details', {
+              title: 'Book Details',
+              books: books,
+  displayName : req.user ? req.user.displayName : ''
+          });
+        }
+      });
+
+    } catch (err) {
+      console.log(err);
+      res.redirect('/errors/404');
+    }
 });
 
 // POST - process the information passed from the details form and update the document
@@ -75,6 +98,26 @@ router.post('/:id', (req, res, next) => {
     /*****************
      * ADD CODE HERE *
      *****************/
+      // get a reference to the id from the url
+    let id = req.params.id;
+
+     let updatedBook = book({
+       "_id": id,
+      "Title": req.body.title,
+      "Price": req.body.price,
+      "Author": req.body.author,
+      "Genre": req.body.genre
+    });
+
+    book.update({_id: id}, updatedBook, (err) => {
+      if(err) {
+        console.log(err);
+        res.end(err);
+      } else {
+        // refresh the Books List
+        res.redirect('/books');
+      }
+    });
 
 });
 
